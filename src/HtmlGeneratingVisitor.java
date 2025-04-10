@@ -1,16 +1,16 @@
 public class HtmlGeneratingVisitor implements DocumentVisitor {
     @Override
-    public void visitHeader(Header header) {
+    public void visit(Header header) {
         // Example: <h1>Title</h1>
     }
 
     @Override
-    public void visitParagraph(Paragraph paragraph) {
+    public void visit(Paragraph paragraph) {
 
     }
 
     @Override
-    public void visitBulletList(BulletList bulletList) {
+    public void visit(BulletList bulletList) {
 
     }
 

@@ -9,6 +9,6 @@ public class BulletList implements DocumentPart {
 
     @Override
     public void accept(DocumentVisitor visitor) {
-        visitor.visitBulletList(this);
+        visitor.visit(this);
     }
 }

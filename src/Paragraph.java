@@ -7,6 +7,6 @@ public class Paragraph implements DocumentPart {
 
     @Override
     public void accept(DocumentVisitor visitor) {
-        visitor.visitParagraph(this);
+        visitor.visit(this);
     }
 }
