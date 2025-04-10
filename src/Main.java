@@ -12,7 +12,12 @@ public class Main {
                                 "-- Edsger Dijkstra",
                         "I'm not a great programmer. I'm just a good programmer with great habits. --Kent Beck"
                 )));
-        HtmlGeneratingVisitor visitor = new HtmlGeneratingVisitor();
+        generateText(new HtmlGeneratingVisitor(), elements);
+        generateText(new MarkdownGeneratingVisitor(), elements);
+        generateText(new CharacterCountingGenerator(), elements);
+    }
+
+    private static void generateText(DocumentVisitor visitor, List<DocumentPart> elements) {
         for (DocumentPart part : elements) {
             part.accept(visitor);
         }
