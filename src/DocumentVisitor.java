@@ -1,6 +1,9 @@
 public interface DocumentVisitor {
-    void visitHeader(Header header);
-    void visitParagraph(Paragraph paragraph);
-    void visitBulletList(BulletList bulletList);
+    void visit(Header header);
+
+    void visit(Paragraph paragraph);
+
+    void visit(BulletList bulletList);
+
     String getOutput();
 }

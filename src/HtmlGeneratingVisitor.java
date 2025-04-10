@@ -1,14 +1,15 @@
-public class HtmlGeneratingVisitor implements DocumentVisitor{
+public class HtmlGeneratingVisitor implements DocumentVisitor {
     StringBuilder sb = new StringBuilder();
 
     @Override
-    public void visitHeader(Header header) {
+    public void visit(Header header) {
         // Example: <h1>Title</h1>
         sb.append(String.format("<h%d>%s</h%d>\n", header.level, header.text, header.level));
     }
 
     @Override
-    public void visitParagraph(Paragraph paragraph) {
+    public void visit(Paragraph paragraph) {
+        // Example: <p>text</p>
         sb.append("<p>");
         sb.append(paragraph.text);
         sb.append("</p>");
@@ -16,7 +17,7 @@ public class HtmlGeneratingVisitor implements DocumentVisitor{
     }
 
     @Override
-    public void visitBulletList(BulletList bulletList) {
+    public void visit(BulletList bulletList) {
         sb.append("<ul>\n");
         for (String item : bulletList.items) {
             sb.append("<li>").append(item).append("</li>\n");
